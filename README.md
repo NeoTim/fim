@@ -1,4 +1,4 @@
-# Fim
+# Fim [![Build Status](https://travis-ci.org/forsigner/fim.svg?branch=master)](https://travis-ci.org/forsigner/fim)
 
 Test private method easy.
 

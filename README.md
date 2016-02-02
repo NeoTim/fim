@@ -11,9 +11,10 @@ $ npm install fim --save-dev
 
 # Usage
 
-Imagine `foo.js` below is a file to test.
+Imagine `foo.js` is a file to test.
 
 ```js
+//foo.js
 
 module.exports = foo;
 

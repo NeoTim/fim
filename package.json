@@ -1,10 +1,10 @@
 {
   "name": "fim",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Test private method easy.",
-  "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "bundle": "echo hello"
   },
   "repository": {
     "type": "git",
@@ -25,7 +25,10 @@
   "homepage": "https://github.com/forsigner/fim#readme",
   "devDependencies": {
     "babel-eslint": "^4.1.6",
+    "babel-preset-es2015": "^6.3.13",
     "eslint": "^1.10.3",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^6.1.2",
     "jest-cli": "^0.8.2"
   }
 }

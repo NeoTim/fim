@@ -1,7 +1,11 @@
 'use strict';
 
+jest
+  .dontMock('../index');
+
 describe('Index', function() {
+
   it('init', function() {
-    expect('init').toBe('init');
+    // TODO
   });
 });

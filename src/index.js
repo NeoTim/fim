@@ -1,6 +1,6 @@
 'use strict';
 
-var Module = require('module');
+let Module = require('module');
 
 module.exports = fim;
 
@@ -22,8 +22,8 @@ function fim(id) {
  * @private
  */
 function load(parentModule, id) {
-  var moduleId = Module._resolveFilename(id, parentModule);
-  var mod = new Module(moduleId, parentModule);
+  let moduleId = Module._resolveFilename(id, parentModule);
+  let mod = new Module(moduleId, parentModule);
 
   mod.load(mod.id);
 
@@ -36,7 +36,18 @@ function load(parentModule, id) {
  * @private
  */
 function overrideModuleWrapper() {
-  var str = '\n    Object.defineProperty(module.exports, \'__get__\', {\n      enumerable: true,\n      writable: true,\n      value: function(item) {\n        if (typeof item !== \'string\') {\n          throw new Error(\'shoul pass a string\');\n        }\n        return eval(item);\n      }\n    });\n  ';
+  let str = `
+    Object.defineProperty(module.exports, '__get__', {
+      enumerable: true,
+      writable: true,
+      value: function(item) {
+        if (typeof item !== 'string') {
+          throw new Error('shoul pass a string');
+        }
+        return eval(item);
+      }
+    });
+  `;
 
   Module.wrapper[1] = str + Module.wrapper[1];
 }
